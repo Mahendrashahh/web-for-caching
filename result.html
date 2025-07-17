@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=!, initial-scale=1.0">
+    <title>B.Ed Wallah</title>
+    <link rel="icon" href="img/bwlogo.png copy.jpeg" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+
+        }
+
+        main {
+            height: 100%;
+            width: 100%;
+        }
+
+        h1,
+        h2 {
+            font-size: 56px;
+            margin-top: 25px;
+            font-family: system-ui;
+            font-weight: bold;
+            background: #00a2c8;
+            width: 100vw;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            color: white;
+            border: solid black 1px;
+            margin-left: -10px;
+            margin-right: 50px;
+
+        }
+
+        .logo img {
+            height: 100px;
+            border-radius: 100px;
+
+        }
+
+        .navbar {
+            background: #00a2c8;
+            color: #fff;
+            padding: 0.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 120px;
+            border: solid black 2px;
+            border-radius: 12px;
+            margin-left: -2px;
+            margin-right: 10px;
+        }
+
+        .navbar .title {
+            font-family: 'Passion One', Arial, Helvetica, sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffb300;
+        }
+
+        .institute img {
+            height: 420px;
+            width: 98vw;
+            margin-left: -1px;
+            border-radius: 15px;
+            margin-top: -11px;
+            object-fit: cover;
+            margin-right: 10px;
+            margin-bottom: 30px;
+
+        }
+
+        .institute p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 10px;
+            color: #333;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .hero-right {
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            height: 700px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #1e90ff;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 700px;
+            opacity: 0;
+            transition: opacity 1s ease, transform 0.4s cubic-bezier(.68, -0.55, .27, 1.55);
+            object-fit: cover;
+            display: block;
+            background: #1e90ff;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-slide:hover {
+            transform: scale(1.08);
+            z-index: 3;
+            object-fit: contain;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        }
+
+        .hero-slide.expanded {
+            opacity: 1 !important;
+            z-index: 10 !important;
+            object-fit: contain !important;
+            transform: scale(1.15) !important;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
+            transition: transform 0.4s cubic-bezier(.68, -0.55, .27, 1.55), box-shadow 0.4s;
+        }
+
+        .hero-right.expanded {
+            z-index: 10001;
+        }
+
+        footer {
+            background: #00a2c8;
+            color: white;
+            height: 270px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+            border-radius: 15px;
+            margin-left: -16px;
+        }
+
+        .footer-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: -54px;
+            margin-bottom: 29px;
+        }
+
+        .footer-links img {
+            height: 28px;
+            vertical-align: middle;
+            border-radius: 30px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ffb300;
+        }
+
+        .footer-location {
+            font-size: 18px;
+            font-family: system-ui;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            margin-top: 4px;
+        }
+
+        .footer-location img {
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 6px;
+            border-radius: 30px;
+        }
+
+        .footer-content p {
+            text-align: center;
+            font-size: 17px;
+            font-family: system-ui;
+            font-weight: 600;
+            margin-bottom: -100px;
+
+        }
+
+        #element {
+            color: black
+        }
+
+        .contact-btn {
+            background: #ffb300;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 24px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            font-weight: 700;
+        }
+
+        /* Confetti animation - enhanced */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .congrats-message {
+            position: fixed;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: transparent;
+            color: #ff9800;
+            font-size: 2.2rem;
+            font-family: 'Passion One', system-ui, sans-serif;
+            font-weight: bold;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            opacity: 0;
+            animation: popArc 1.5s cubic-bezier(.68, -0.55, .27, 1.55) forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 340px;
+            min-height: 120px;
+            pointer-events: none;
+            z-index: 10000;
+        }
+
+        #congrats-inline {
+            display: none;
+            font-size: 2.2rem;
+            font-family: 'Passion One', system-ui, sans-serif;
+            font-weight: bold;
+            color: #ff9800;
+            vertical-align: middle;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes popArc {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) scale(0.5) translateY(200px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.1) translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1) translateY(0);
+            }
+        }
+
+        /* -------------------- Responsive Styles for Mobile -------------------- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0.5rem;
+                border-radius: 0 0 12px 12px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .navbar .title {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                text-align: start;
+                width: 100%;
+            }
+
+            .logo {
+                margin-top: -45px;
+            }
+
+
+            .logo img {
+                height: 70px;
+                margin-bottom: 0.5rem;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+                position: absolute;
+                margin-right: -220px;
+
+            }
+
+            main {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                border-radius: 0;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.1rem;
+                padding: 6px;
+                width: 95vw;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                margin-left: -8px;
+            }
+
+            .institute img {
+                height: 180px;
+                width: 100vw;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 8px;
+                margin-top: -35px;
+                object-fit: contain;
+                margin-bottom: -10px;
+            }
+
+            footer {
+                height: auto;
+                margin-top: 40px;
+                border-radius: 0 0 15px 15px;
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            .footer-location {
+                font-size: 15px;
+                flex-direction: column;
+                gap: 4px;
+                margin-bottom: 6px;
+                margin-top: 2px;
+            }
+
+            .footer-content p {
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+
+            #congrats-message,
+            #congrats-inline {
+                font-size: 1.1rem;
+                min-width: 120px;
+                min-height: 40px;
+            }
+
+            #result-heading-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        #result-heading-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 18px;
+            position: relative;
+            margin: 0 auto !important;
+            width: fit-content;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        .congrats-inline {
+            display: none;
+            margin-left: 18px;
+            font-size: 2.2rem;
+            font-family: 'Passion One', system-ui, sans-serif;
+            font-weight: bold;
+            color: #ff9800;
+            vertical-align: middle;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        @media (max-width: 768px) {
+            .hero-right {
+                width: 100%;
+                left: 0;
+                margin-left: 0;
+                margin-right: 0;
+                height: auto;
+                border-radius: 0;
+                background-color: white;
+            }
+
+            .hero-slide {
+                position: relative;
+                width: 100%;
+                height: auto;
+                opacity: 0;
+                object-fit: contain;
+            }
+
+            .hero-slide.active {
+                opacity: 1;
+            }
+
+            .hero-slide:hover {
+                transform: none;
+                box-shadow: none;
+                object-fit: contain;
+            }
+
+            .hero-slide.expanded {
+                transform: none !important;
+                object-fit: contain !important;
+                box-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+<script>
+    let heroInterval;
+    let isPaused = false;
+
+    function startHeroSlider() {
+        const slides = document.querySelectorAll('.hero-slide');
+        let current = 0;
+        heroInterval = setInterval(() => {
+            if (!isPaused) {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }
+        }, 3000);
+    }
+
+    function stopHeroSlider() {
+        clearInterval(heroInterval);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelectorAll('.hero-slide');
+        const heroRight = document.querySelector('.hero-right');
+        let expandedImg = null;
+
+        // Start slider
+        startHeroSlider();
+
+        slides.forEach(img => {
+            img.addEventListener('click', function (e) {
+                // If already expanded, shrink back
+                if (img.classList.contains('expanded')) {
+                    img.classList.remove('expanded');
+                    heroRight.classList.remove('expanded');
+                    isPaused = false;
+                    startHeroSlider();
+                    expandedImg = null;
+                } else {
+                    // Remove expanded from any other
+                    slides.forEach(i => i.classList.remove('expanded'));
+                    img.classList.add('expanded');
+                    heroRight.classList.add('expanded');
+                    isPaused = true;
+                    stopHeroSlider();
+                    expandedImg = img;
+                }
+                e.stopPropagation();
+            });
+        });
+
+        // Click outside to close expanded
+        document.addEventListener('click', function (e) {
+            if (expandedImg && !expandedImg.contains(e.target)) {
+                expandedImg.classList.remove('expanded');
+                heroRight.classList.remove('expanded');
+                isPaused = false;
+                startHeroSlider();
+                expandedImg = null;
+            }
+        });
+
+        // Prevent click bubbling inside hero-right
+        heroRight.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    });
+</script>
+
+<body>
+    <nav class="navbar">
+        <div class="title">B.Ed Wallah</div>
+        <div class="logo"><img src="img/bwlogo.png.jpeg" alt="B.Ed Wallah"></div>
+        <ul>
+            <li><a href="bw.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="result.html">Result</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <h1>Result</h1>
+        <div class="institute"><img src="img/bw coaching INSTITUTE (80 x 24 in).png" alt=""></div>
+        <div id="congrats-message" class="congrats-message" style="display:none;">
+            <span id="congrats-text">🥳 Congratulations! We did it! 🥳</span>
+        </div>
+        <h2>Result</h2>
+        <span id="congrats-inline">
+            Congratulations! We did it! 🥳</span>
+        </h2>
+        <div class="hero-right">
+            <img class="hero-slide active" src="img/bg-1.png" alt="B.Ed Wallah result">
+            <img class="hero-slide" src="img/bg-2.png" alt="B.Ed Wallah result">
+        </div>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const slides = document.querySelectorAll('.hero-slide');
+                let current = 0;
+                setInterval(() => {
+                    slides[current].classList.remove('active');
+                    current = (current + 1) % slides.length;
+                    slides[current].classList.add('active');
+                }, 3000);
+            });
+
+        </script>
+
+        <div id="confetti-container" class="confetti"></div>
+
+        <section>
+            <footer>
+                <div class="footer-content">
+
+                    <div class="footer-links">
+                        <a href="https://www.instagram.com/b.edwallah?igsh=MmoyMnNtdXZ5ejFp" target="_blank"
+                            rel="noopener" aria-label="Instagram">
+                            <img src="img/insta.jpeg" alt="Instagram"> Instagram
+                        </a>
+                        <a href="https://www.facebook.com/share/14NiKnM9fp/" target="_blank" rel="noopener"
+                            aria-label="Facebook">
+                            <img src="img/facebook.png" alt="Facebook"> Facebook
+                        </a>
+                    </div>
+                    <div class="footer-location">
+                        <span>
+                            <img src="img/location.png" alt="Location">
+                            <strong>B.Ed Wallah Coaching Institute</strong>,
+                            <a href="https://g.co/kgs/1CHXPzU" target="_blank" rel="noopener" id="footer-address"
+                                style="color: #fff; text-decoration: underline;">Dehradun, Uttarakhand 248171</a>
+                        </span>
+                    </div>
+                    <a href="tel:+918077227942" class="contact-btn"
+                        style="background:#ffb300;color:#fff;padding:14px 32px;border-radius:50px;font-size:24px;text-decoration:none;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);font-weight:700;">
+                        <img src="img/call.png" alt="Contact" style="height:32px;border-radius:50%;"> Contact
+                    </a>
+                    <p>&copy; 2025 B.Ed Wallah Coaching Institute. All rights reserved.<br><span><strong>Devloped
+                                By</strong></span>
+                        <span id="element"></span>
+                    </p>
+                </div>
+            </footer>
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script>
+                var typed = new Typed('#element', {
+                    strings: ['Mahendra shah'],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    loop: true
+                });
+            </script>
+        </section>
+    </main>
+    <script>
+        // Enhanced Confetti animation with more density
+        let congratsShown = false;
+        let congratsScrolled = false;
+        let congratsTimeout;
+        let confettiRepeatCount = 0;
+        let confettiRepeatMax = 4;
+        let confettiRepeatInterval;
+        function showCongratsPopout(duration = 2200) {
+            const msg = document.getElementById('congrats-message');
+            msg.style.display = 'flex';
+            msg.style.opacity = 0;
+            msg.style.animation = 'none';
+            void msg.offsetWidth; // force reflow
+            msg.style.animation = '';
+            msg.style.opacity = 1;
+            popConfetti(320); // more density, smaller size
+            document.getElementById('congrats-inline').style.display = 'none';
+            clearTimeout(congratsTimeout);
+            congratsTimeout = setTimeout(() => {
+                msg.style.display = 'none';
+                document.getElementById('congrats-inline').style.display = 'inline-block';
+            }, duration);
+        }
+        function repeatConfettiPopout() {
+            if (confettiRepeatCount >= confettiRepeatMax) {
+                clearInterval(confettiRepeatInterval);
+                return;
+            }
+            showCongratsPopout();
+            confettiRepeatCount++;
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(() => {
+                showCongratsPopout();
+                congratsShown = true;
+                confettiRepeatCount = 1;
+                confettiRepeatInterval = setInterval(repeatConfettiPopout, 45000); // 45 seconds
+            }, 600);
+        });
+        function handleScrollCongrats() {
+            if (!congratsShown || congratsScrolled) return;
+            const heading = document.getElementById('result-heading-row');
+            const rect = heading.getBoundingClientRect();
+            if (rect.bottom < 0) {
+                // User has scrolled past heading for the first time
+                showCongratsPopout(1800);
+                congratsScrolled = true;
+            }
+        }
+        window.addEventListener('scroll', handleScrollCongrats);
+        function createConfettiPiece() {
+            const confetti = document.createElement('div');
+            const colors = ['#ffb300', '#00a2c8', '#ff4081', '#4caf50', '#ffd600', '#ff5722', '#e91e63', '#00e676', '#2979ff', '#ff1744'];
+            const size = Math.random() * 8 + 8; // 8px to 16px (smaller)
+            confetti.className = 'confetti-piece';
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.top = '-40px';
+            confetti.style.opacity = Math.random() * 0.5 + 0.7;
+            confetti.style.transform = `scale(${Math.random() * 0.7 + 0.8}) rotate(${Math.random() * 360}deg)`;
+            confetti.style.zIndex = 9999;
+            confetti.style.transition = 'top 3.2s cubic-bezier(.68,-0.55,.27,1.55), opacity 3.2s, transform 3.2s';
+            document.getElementById('confetti-container').appendChild(confetti);
+            setTimeout(() => {
+                confetti.style.top = (window.innerHeight * (0.7 + Math.random() * 0.3)) + 'px';
+                confetti.style.opacity = 0;
+                confetti.style.transform += ` scale(${Math.random() * 1.2 + 0.7}) rotate(${Math.random() * 360}deg)`;
+            }, 10);
+            setTimeout(() => confetti.remove(), 3400);
+        }
+        function popConfetti(times = 320) {
+            for (let i = 0; i < times; i++) {
+                setTimeout(createConfettiPiece, i * 4); // faster, more dense
+            }
+        }
+    </script>
+</body>
+
+</html>

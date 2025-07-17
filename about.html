@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Ed Wallah</title>
+    <link rel="icon" href="img/bwlogo.png copy.jpeg" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Passion+One:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .logo img {
+            height: 100px;
+            border-radius: 100px;
+
+        }
+
+        .navbar {
+            background: #00a2c8;
+            color: #fff;
+            padding: 0.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 120px;
+            border: solid black 2px;
+            border-radius: 12px;
+        }
+
+        .navbar .title {
+            font-family: 'Passion One', Arial, Helvetica, sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffb300;
+        }
+
+        main {
+            padding: 2rem;
+            width: 100%;
+            height: 100%;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            margin-left: -30px;
+
+        }
+
+        .about-para {
+            font-size: 20px;
+            font-family: system-ui;
+            font-weight: 650;
+            line-height: 2.2;
+            margin-bottom: 140px;
+            text-align: center;
+            margin-top: 36px;
+        }
+
+        .institute {
+            margin-left: -49px;
+        }
+
+        .institute img {
+            height: 420px;
+            width: 100vw;
+            margin-left: 52px;
+            border-radius: 15px;
+            margin-top: -41px;
+            object-fit: cover;
+            margin-right: 5px;
+            margin-bottom: 30px;
+
+        }
+
+        h1 {
+            font-size: 56px;
+            margin-top: -31px;
+            font-family: system-ui;
+            font-weight: bold;
+            background: #00a2c8;
+            width: 100vw;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 55px;
+            color: white;
+            border: solid black 1px;
+        }
+
+        h2,
+        h3 {
+            font-size: 56px;
+            margin-top: 25px;
+            font-family: system-ui;
+            font-weight: bold;
+            background: #00a2c8;
+            width: 100vw;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            color: white;
+            border: solid black 1px;
+        }
+
+
+
+        .head {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .subcontainer1 {
+            border: solid black 1px;
+            width: 370px;
+            text-align: center;
+            margin-left: 12px;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .subcontainer2 {
+            border: solid black 1px;
+            width: 370px;
+            text-align: center;
+            margin-left: 9px;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .sub {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            width: 300px;
+            border: solid black 1px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: system-ui;
+            height: 210px;
+        }
+
+        .sub ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: -5px;
+        }
+
+        .sub ul li {
+            margin-bottom: 15px;
+            border: solid black 1px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .sub ul li :hover {
+            color: #ffb300;
+            cursor: pointer;
+        }
+
+        .contain {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #00a2c8;
+            color: white;
+            height: 270px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+            border-radius: 15px;
+            margin-left: -16px;
+        }
+
+        .footer-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: -54px;
+            margin-bottom: 29px;
+        }
+
+        .footer-links img {
+            height: 28px;
+            vertical-align: middle;
+            border-radius: 30px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ffb300;
+        }
+
+        .footer-location {
+            font-size: 18px;
+            font-family: system-ui;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            margin-top: 4px;
+        }
+
+        .footer-location img {
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 6px;
+            border-radius: 30px;
+        }
+
+        .footer-content p {
+            text-align: center;
+            font-size: 17px;
+            font-family: system-ui;
+            font-weight: 600;
+            margin-bottom: -100px;
+
+        }
+
+        .about-para strong {
+            color: darkmagenta;
+        }
+
+        .sub-para {
+            font-size: 20px;
+            font-family: system-ui;
+            font-weight: 650;
+            line-height: 2.2;
+            margin-bottom: 70px;
+            text-align: center;
+            margin-top: 40px;
+            color: darkviolet;
+        }
+
+        #element {
+            color: black
+        }
+
+        /* -------------------- Responsive Styles for Mobile -------------------- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0.5rem;
+                border-radius: 0 0 12px 12px;
+            }
+
+            .navbar .title {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                text-align: start;
+                width: 100%;
+            }
+
+            .logo {
+                margin-top: -45px;
+            }
+
+            .logo img {
+                height: 70px;
+                margin-bottom: 0.5rem;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+                position: absolute;
+                margin-right: -220px;
+
+            }
+
+            main {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                border-radius: 0;
+                margin-left: 0;
+            }
+
+            .institute {
+                margin-left: 0;
+            }
+
+            .institute img {
+                height: 180px;
+                width: 100vw;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 8px;
+                margin-top: -35px;
+                object-fit: contain;
+                margin-bottom: -10px;
+            }
+
+            h1,
+            h2,
+            h3 {
+                font-size: 1.1rem;
+                padding: 6px;
+                width: 95vw;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                margin-left: -4px;
+            }
+
+            .about-para,
+            .sub-para {
+                font-size: 15px;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                padding: 6px;
+                text-align: center;
+                margin-left: -17px;
+            }
+
+            .head,
+            .contain {
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .subcontainer1 {
+                width: 50vw;
+                font-size: 15px;
+                margin-left: 0;
+                position: absolute;
+                margin-top: 21px;
+                text-align: center;
+                border: solid green 1px;
+                border-radius: 15px;
+                margin-bottom: 8px;
+                font-weight: 800;
+            }
+
+            .subcontainer2 {
+                width: 50vw;
+                font-size: 15px;
+                margin-left: 0;
+                position: absolute;
+                margin-top: 494px;
+                text-align: center;
+                border: solid green 1px;
+                border-radius: 15px;
+                margin-bottom: 8px;
+                font-weight: 800;
+                overflow: hidden;
+            }
+
+            .sub {
+                width: 90vw;
+                font-size: 15px;
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .sub ul li {
+                font-size: 15px;
+            }
+
+            footer {
+                height: auto;
+                margin-top: 40px;
+                border-radius: 0 0 15px 15px;
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            .footer-location {
+                font-size: 15px;
+                flex-direction: column;
+                gap: 4px;
+                margin-bottom: 6px;
+                margin-top: 2px;
+            }
+
+            .footer-content p {
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+        }
+
+        .contact-btn {
+            background: #ffb300;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 24px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="title">B.Ed Wallah</div>
+        <div class="logo"><img src="img/bwlogo.png.jpeg" alt=""></div>
+        <ul>
+            <li><a href="bw.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="result.html">Result</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>About Us</h1>
+        <div class="institute"><img src="img/bw coaching INSTITUTE (80 x 24 in).png" alt=""></div>
+        <h2>About Us</h2>
+        <p class="about-para">
+            <strong>More then 5 year teaching experience</strong><br>
+            B.Ed Wallah Coaching Institute – Shaping Futures with Quality Education
+
+            Established in July 2023, B.Ed Wallah Coaching Institute has been dedicated to delivering high-quality,
+            result-driven education to school students. Located in a nurturing academic environment, we aim to provide
+            strong academic support to students from Class 1 to 10, helping them excel in their studies and build a
+            bright academic future.
+
+            We specialize in:
+
+            <br>📘 Classes 1st to 8th – All Subjects:
+            Covering every subject with a focus on concept clarity, regular revision, and practice to build strong
+            foundations.
+
+            <br>📗 Classes 9th & 10th – Maths and Science:
+            Targeted coaching for board success through expert guidance, in-depth subject coverage, and consistent
+            testing.
+
+            Our team of dedicated educators ensures that every student receives personal attention, individual
+            doubt-solving, and a customized learning plan suited to their pace and level.
+
+            With a blend of traditional teaching values and modern learning methods, B.Ed Wallah Coaching Institute is
+            more than just a tuition center – it's a place where academic excellence meets personal care.<br>
+        <p class="sub-para"><strong>H.O.D.- Kuldeep shah (M.Sc+B.Ed)<br>
+                Gaurav Gairola (M.Sc+ B.Ed)</strong>
+        </p>
+        <section>
+            <h3>Subjects We Cover:</h3>
+            <div class="head">
+                <div class="subcontainer1">📘 For Class 1st to 5th: </div>
+                <div class="subcontainer2">📗 For Class 6th to 10th: </div>
+            </div>
+            <div class="contain">
+                <div class="sub">
+                    <ul>
+                        <li><strong>All Subjects </strong></li>
+                        <li>English</li>
+                        <li>Hindi</li>
+                        <li>Mathematics</li>
+                        <li>Environmental Science, etc.</li>
+                    </ul>
+                </div>
+                <div class="sub">
+                    <ul>
+                        <li><strong>All Subjects </strong></li>
+                        <li>Mathematics</li>
+                        <li>Science</li>
+                        <li>English</li>
+
+                        <li>SST</li>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <footer>
+                <div class="footer-content">
+
+                    <div class="footer-links">
+                        <a href="https://www.instagram.com/b.edwallah?igsh=MmoyMnNtdXZ5ejFp" target="_blank"
+                            rel="noopener" aria-label="Instagram">
+                            <img src="img/insta.jpeg" alt="Instagram"> Instagram
+                        </a>
+                        <a href="https://www.facebook.com/share/14NiKnM9fp/" target="_blank" rel="noopener"
+                            aria-label="Facebook">
+                            <img src="img/facebook.png" alt="Facebook"> Facebook
+                        </a>
+                    </div>
+                    <div class="footer-location">
+                        <span>
+                            <img src="img/location.png" alt="Location">
+                            <strong>B.Ed Wallah Coaching Institute</strong>,
+                            <a href="https://g.co/kgs/1CHXPzU" target="_blank" rel="noopener" id="footer-address"
+                                style="color: #fff; text-decoration: underline;">Dehradun, Uttarakhand 248171</a>
+                        </span>
+                    </div>
+                    <a href="tel:+918077227942" class="contact-btn"
+                        style="background:#ffb300;color:#fff;padding:14px 32px;border-radius:50px;font-size:24px;text-decoration:none;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);font-weight:700;">
+                        <img src="img/call.png" alt="Contact" style="height:32px;border-radius:50%;"> Contact
+                    </a>
+                    <p>&copy; 2025 B.Ed Wallah Coaching Institute. All rights reserved.<br><span><strong>Devloped By</strong></span>
+                        <span id="element"></span>
+                    </p>
+                </div>
+            </footer>
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script>
+                var typed = new Typed('#element', {
+                    strings: ['Mahendra shah'],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    loop: true
+                });
+            </script>
+        </section>
+    </main>
+</body>
+
+</html>
