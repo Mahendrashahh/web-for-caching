@@ -119,57 +119,32 @@
         }
 
         .hero-right {
+            display: block;
+            object-fit: contain;
             position: relative;
             width: 100vw;
             left: 50%;
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            height: 700px;
+            height: 100%;
             overflow: hidden;
             border-radius: 8px;
-            background: #1e90ff;
+            background:white
+            
+            
         }
-
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .hero-right img{
             width: 100%;
-            height: 700px;
-            opacity: 0;
-            transition: opacity 1s ease, transform 0.4s cubic-bezier(.68, -0.55, .27, 1.55);
-            object-fit: cover;
-            display: block;
-            background: #1e90ff;
-            z-index: 1;
-            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 10px;
         }
 
-        .hero-slide.active {
-            opacity: 1;
-            z-index: 2;
-        }
+      
 
-        .hero-slide:hover {
-            transform: scale(1.08);
-            z-index: 3;
-            object-fit: contain;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-        }
 
-        .hero-slide.expanded {
-            opacity: 1 !important;
-            z-index: 10 !important;
-            object-fit: contain !important;
-            transform: scale(1.15) !important;
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
-            transition: transform 0.4s cubic-bezier(.68, -0.55, .27, 1.55), box-shadow 0.4s;
-        }
-
-        .hero-right.expanded {
-            z-index: 10001;
-        }
+       
+        
 
         footer {
             background: #00a2c8;
@@ -474,7 +449,7 @@
                 left: 0;
                 margin-left: 0;
                 margin-right: 0;
-                height: auto;
+                height: 100%;
                 border-radius: 0;
                 background-color: white;
             }
@@ -487,91 +462,14 @@
                 object-fit: contain;
             }
 
-            .hero-slide.active {
-                opacity: 1;
-            }
+        
 
-            .hero-slide:hover {
-                transform: none;
-                box-shadow: none;
-                object-fit: contain;
-            }
-
-            .hero-slide.expanded {
-                transform: none !important;
-                object-fit: contain !important;
-                box-shadow: none !important;
-            }
+           
         }
     </style>
 </head>
-<script>
-    let heroInterval;
-    let isPaused = false;
 
-    function startHeroSlider() {
-        const slides = document.querySelectorAll('.hero-slide');
-        let current = 0;
-        heroInterval = setInterval(() => {
-            if (!isPaused) {
-                slides[current].classList.remove('active');
-                current = (current + 1) % slides.length;
-                slides[current].classList.add('active');
-            }
-        }, 3000);
-    }
 
-    function stopHeroSlider() {
-        clearInterval(heroInterval);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const slides = document.querySelectorAll('.hero-slide');
-        const heroRight = document.querySelector('.hero-right');
-        let expandedImg = null;
-
-        // Start slider
-        startHeroSlider();
-
-        slides.forEach(img => {
-            img.addEventListener('click', function (e) {
-                // If already expanded, shrink back
-                if (img.classList.contains('expanded')) {
-                    img.classList.remove('expanded');
-                    heroRight.classList.remove('expanded');
-                    isPaused = false;
-                    startHeroSlider();
-                    expandedImg = null;
-                } else {
-                    // Remove expanded from any other
-                    slides.forEach(i => i.classList.remove('expanded'));
-                    img.classList.add('expanded');
-                    heroRight.classList.add('expanded');
-                    isPaused = true;
-                    stopHeroSlider();
-                    expandedImg = img;
-                }
-                e.stopPropagation();
-            });
-        });
-
-        // Click outside to close expanded
-        document.addEventListener('click', function (e) {
-            if (expandedImg && !expandedImg.contains(e.target)) {
-                expandedImg.classList.remove('expanded');
-                heroRight.classList.remove('expanded');
-                isPaused = false;
-                startHeroSlider();
-                expandedImg = null;
-            }
-        });
-
-        // Prevent click bubbling inside hero-right
-        heroRight.addEventListener('click', function (e) {
-            e.stopPropagation();
-        });
-    });
-</script>
 
 <body>
     <nav class="navbar">
@@ -596,23 +494,12 @@
             Congratulations! We did it! 🥳</span>
         </h2>
         <div class="hero-right">
-            <img class="hero-slide active" src="img/bg-1.png" alt="B.Ed Wallah result">
-            <img class="hero-slide" src="img/bg-2.png" alt="B.Ed Wallah result">
+            <img  src="img/bg-1.png" alt="B.Ed Wallah result">
+            <img  src="img/bg-2.png" alt="B.Ed Wallah result">
         </div>
 
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const slides = document.querySelectorAll('.hero-slide');
-                let current = 0;
-                setInterval(() => {
-                    slides[current].classList.remove('active');
-                    current = (current + 1) % slides.length;
-                    slides[current].classList.add('active');
-                }, 3000);
-            });
-
-        </script>
+        
 
         <div id="confetti-container" class="confetti"></div>
 
