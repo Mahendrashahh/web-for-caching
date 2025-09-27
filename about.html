@@ -11,11 +11,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Passion+One:wght@400;700;900&display=swap"
         rel="stylesheet">
+    <link href="
+https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
+" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background: #f4f4f4;
+
             height: 100%;
             width: 100%;
             overflow-x: hidden;
@@ -28,15 +33,18 @@
         }
 
         .navbar {
-            background: #00a2c8;
+            background: linear-gradient(135deg, #8e44ad, #3e8abd, #8e44ad, #3e8abd);
             color: #fff;
             padding: 0.5rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 120px;
+            width: 94.5%;
+
             border: solid black 2px;
             border-radius: 12px;
+
         }
 
         .navbar .title {
@@ -70,14 +78,16 @@
         }
 
         main {
-            padding: 2rem;
+
             width: 100%;
             height: 100%;
             margin: 2rem auto;
             background: #fff;
+
+
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-            margin-left: -30px;
+
 
         }
 
@@ -89,35 +99,42 @@
             margin-bottom: 140px;
             text-align: center;
             margin-top: 36px;
+            color: #dadada77;
         }
 
         .institute {
-            margin-left: -49px;
+            height: 420px;
+            width: 99vw;
+            margin-left: -3.3%;
+
         }
 
         .institute img {
             height: 420px;
-            width: 100vw;
-            margin-left: 52px;
+            width: 99vw;
+            margin-left: 41px;
             border-radius: 15px;
             margin-top: -41px;
             object-fit: cover;
             margin-right: 5px;
             margin-bottom: 30px;
 
+
         }
 
         h1 {
+
             font-size: 56px;
-            margin-top: -31px;
+            margin-top: 31px;
             font-family: system-ui;
             font-weight: bold;
-            background: #00a2c8;
-            width: 100vw;
+            background: linear-gradient(135deg, #8e44ad, #3e8abd, #8e44ad, #3e8abd);
+            width: 99vw;
             text-align: center;
             border-radius: 15px;
-            margin-bottom: 55px;
+            margin-bottom: 42px;
             color: white;
+
             border: solid black 1px;
         }
 
@@ -127,8 +144,8 @@
             margin-top: 25px;
             font-family: system-ui;
             font-weight: bold;
-            background: #00a2c8;
-            width: 100vw;
+            background: linear-gradient(135deg, #8e44ad, #3e8abd, #8e44ad, #3e8abd);
+            width: 99vw;
             text-align: center;
             border-radius: 15px;
             margin-bottom: 35px;
@@ -140,9 +157,12 @@
 
         .head {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
             margin-top: 20px;
+            margin-left: 6%;
+            margin-right: 6%;
+            margin-top: 5%;
         }
 
         .subcontainer1 {
@@ -153,6 +173,8 @@
             border-radius: 25px;
             font-size: 20px;
             font-weight: bold;
+            background-color: #00a2c8;
+            color: white;
         }
 
         .subcontainer2 {
@@ -163,11 +185,16 @@
             border-radius: 25px;
             font-size: 20px;
             font-weight: bold;
+            background-color: #00a2c8;
+            color: white;
+
         }
 
         .sub {
-            background-color: #f0f0f0;
+            background-color: white;
+
             padding: 20px;
+            color: black;
             border-radius: 10px;
             margin: 10px;
             width: 300px;
@@ -188,6 +215,7 @@
             border: solid black 1px;
             border-radius: 6px;
             text-align: center;
+
         }
 
         .sub ul li :hover {
@@ -203,7 +231,7 @@
         }
 
         footer {
-            background: #00a2c8;
+            background: linear-gradient(135deg, #8e44ad, #3e8abd, #8e44ad, #3e8abd);
             color: white;
             height: 270px;
             display: flex;
@@ -212,7 +240,8 @@
             justify-content: center;
             margin-top: 100px;
             border-radius: 15px;
-            margin-left: -16px;
+
+            margin-bottom: -10%;
         }
 
         .footer-content {
@@ -335,29 +364,39 @@
             }
 
             .institute {
-                margin-left: 0;
+                margin-left: -1%;
+                margin-bottom: 20px;
+                width: 99%;
             }
 
             .institute img {
                 height: 180px;
-                width: 100vw;
+                width: 99%;
                 margin-left: 0;
                 margin-right: 0;
                 border-radius: 8px;
-                margin-top: -35px;
                 object-fit: contain;
-                margin-bottom: -10px;
             }
 
             h1,
-            h2,
             h3 {
                 font-size: 1.1rem;
                 padding: 6px;
-                width: 95vw;
+                width: 97%;
                 margin-bottom: 20px;
                 margin-top: 10px;
-                margin-left: -4px;
+                margin-left: -2%;
+                border-radius: 10px;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+                padding: 6px;
+                width: 97%;
+                margin-bottom: 20px;
+                margin-top: -70%;
+                margin-left: -2%;
+                border-radius: 10px;
             }
 
             .about-para,
@@ -378,37 +417,43 @@
             }
 
             .subcontainer1 {
-                width: 50vw;
+                width: 89.9vw;
                 font-size: 15px;
-                margin-left: 0;
+                margin-left: 0%;
                 position: absolute;
                 margin-top: 21px;
                 text-align: center;
                 border: solid green 1px;
                 border-radius: 15px;
                 margin-bottom: 8px;
+                margin-top: 10px;
                 font-weight: 800;
+                transform: translateX(-4%);
+
             }
 
             .subcontainer2 {
-                width: 50vw;
+                width: 89.9vw;
                 font-size: 15px;
                 margin-left: 0;
                 position: absolute;
-                margin-top: 494px;
+                margin-top: 687px;
                 text-align: center;
                 border: solid green 1px;
                 border-radius: 15px;
-                margin-bottom: 8px;
+                margin-bottom: -10px;
                 font-weight: 800;
                 overflow: hidden;
+                transform: translateX(-4%);
             }
 
             .sub {
                 width: 90vw;
                 font-size: 15px;
                 height: auto;
-                padding: 10px 0;
+                padding: 15px;
+                margin-top: 25px;
+                transform: translateX(-3%);
             }
 
             .sub ul li {
@@ -421,6 +466,8 @@
                 border-radius: 0 0 15px 15px;
                 margin-left: 0;
                 padding: 10px 0;
+                transform: translateX(-2%);
+
             }
 
             .footer-links {
@@ -442,6 +489,22 @@
                 font-size: 14px;
                 margin-bottom: 0;
             }
+
+            .animation {
+                height: 350px;
+                width: 98vw;
+                transform: translateX(4%);
+                transform: translateY(-6%);
+            }
+
+            .video1 {
+                border: none;
+                border-radius: 25px;
+                height: 100%;
+                width: 100%;
+                margin-left: -2%;
+
+            }
         }
 
         .contact-btn {
@@ -457,6 +520,60 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
             font-weight: 700;
         }
+
+        .animation {
+            height: 380px;
+            width: 380px;
+            border: none;
+            border-radius: 18px;
+
+        }
+
+        .anime {
+            height: 380px;
+            width: 380px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: none;
+
+
+        }
+
+        .subject-section {
+            background-color: white;
+        }
+
+        .page1 {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .anime-video {
+
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .video1 {
+            border: none;
+            border-radius: 25px;
+            height: 100%;
+            width: 100%;
+
+
+        }
+
+        .one-video {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border: none;
+            border-radius: 25px;
+
+        }
     </style>
 </head>
 
@@ -471,44 +588,63 @@
         </ul>
     </nav>
     <main>
-        <h1>About Us</h1>
-        <div class="institute"><img src="img/bw coaching INSTITUTE (80 x 24 in).png" alt=""></div>
-        <h2>About Us</h2>
-        <p class="about-para">
-            <strong>More then 5 year teaching experience</strong><br>
-            B.Ed Wallah Coaching Institute – Shaping Futures with Quality Education
+        <div class="page1">
+            <h1>About Us</h1>
+            <div class="institute"><img src="img/bw coaching INSTITUTE (80 x 24 in).png" alt=""></div>
+            <h2>About Us</h2>
 
-            Established in July 2023, B.Ed Wallah Coaching Institute has been dedicated to delivering high-quality,
-            result-driven education to school students. Located in a nurturing academic environment, we aim to provide
-            strong academic support to students from Class 1 to 10, helping them excel in their studies and build a
-            bright academic future.
+            <div class="video1">
+                <video class="one-video" src="vedio/135955-764370986_tiny.mp4" autoplay loop muted></video>
+            </div>
+            <p class="about-para">
+                <strong>More then 5 year teaching experience</strong><br>
+                B.Ed Wallah Coaching Institute – Shaping Futures with Quality Education
 
-            We specialize in:
+                Established in July 2023, B.Ed Wallah Coaching Institute has been dedicated to delivering high-quality,
+                result-driven education to school students. Located in a nurturing academic environment, we aim to
+                provide
+                strong academic support to students from Class 1 to 10, helping them excel in their studies and build a
+                bright academic future.
 
-            <br>📘 Classes 1st to 8th – All Subjects:
-            Covering every subject with a focus on concept clarity, regular revision, and practice to build strong
-            foundations.
+                We specialize in:
 
-            <br>📗 Classes 9th & 10th – Maths and Science:
-            Targeted coaching for board success through expert guidance, in-depth subject coverage, and consistent
-            testing.
+                <br>📘 Classes 1st to 8th – All Subjects:
+                Covering every subject with a focus on concept clarity, regular revision, and practice to build strong
+                foundations.
 
-            Our team of dedicated educators ensures that every student receives personal attention, individual
-            doubt-solving, and a customized learning plan suited to their pace and level.
+                <br>📗 Classes 9th & 10th – Maths and Science:
+                Targeted coaching for board success through expert guidance, in-depth subject coverage, and consistent
+                testing.
 
-            With a blend of traditional teaching values and modern learning methods, B.Ed Wallah Coaching Institute is
-            more than just a tuition center – it's a place where academic excellence meets personal care.<br>
-        <p class="sub-para"><strong>H.O.D.- Kuldeep shah (M.Sc+B.Ed)<br>
-                Gaurav Gairola (M.Sc+ B.Ed)</strong>
-        </p>
-        <section>
+                Our team of dedicated educators ensures that every student receives personal attention, individual
+                doubt-solving, and a customized learning plan suited to their pace and level.
+
+                With a blend of traditional teaching values and modern learning methods, B.Ed Wallah Coaching Institute
+                is
+                more than just a tuition center – it's a place where academic excellence meets personal care.<br>
+            <div class="anime-video">
+                <div class="para1">
+                    <p class="sub-para"><strong>H.O.D.- Kuldeep shah (M.Sc+B.Ed)<br>
+                            Gaurav Gairola (M.Sc+ B.Ed)</strong>
+                </div>
+
+
+            </div>
+            </p>
+
+        </div>
+
+        <section class="subject-section">
             <h3>Subjects We Cover:</h3>
             <div class="head">
-                <div class="subcontainer1">📘 For Class 1st to 5th: </div>
-                <div class="subcontainer2">📗 For Class 6th to 10th: </div>
+                <div data-aos="fade-right" data-aos-duration="2000" class="subcontainer1">📘 For Class 1st to 5th:
+                </div>
+
+                <div data-aos="fade-left" data-aos-duration="2000" class="subcontainer2">📗 For Class 6th to 10th:
+                </div>
             </div>
             <div class="contain">
-                <div class="sub">
+                <div data-aos="fade-right" data-aos-duration="2000" class="sub">
                     <ul>
                         <li><strong>All Subjects </strong></li>
                         <li>English</li>
@@ -517,7 +653,17 @@
                         <li>Environmental Science, etc.</li>
                     </ul>
                 </div>
-                <div class="sub">
+
+                <div class="animation">
+                    <video class="anime" src="vedio/newbookanime.mp4" autoplay loop muted></video>
+                </div>
+
+
+
+
+
+
+                <div data-aos="fade-left" data-aos-duration="2000" class="sub">
                     <ul>
                         <li><strong>All Subjects </strong></li>
                         <li>Mathematics</li>
@@ -559,12 +705,28 @@
                         style="background:#ffb300;color:#fff;padding:14px 32px;border-radius:50px;font-size:24px;text-decoration:none;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.12);font-weight:700;">
                         <img src="img/call.png" alt="Contact" style="height:32px;border-radius:50%;"> Contact
                     </a>
-                    <p>&copy; 2025 B.Ed Wallah Coaching Institute. All rights reserved.<br><span><strong>Devloped By</strong></span>
+                    <p>&copy; 2025 B.Ed Wallah Coaching Institute. All rights reserved.<br><span><strong>Devloped
+                                By</strong></span>
                         <span id="element"></span>
                     </p>
                 </div>
             </footer>
+
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+
+
+
+            <script src="
+https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
+"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
             <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script src="script.js"></script>
             <script>
                 var typed = new Typed('#element', {
                     strings: ['Mahendra shah'],
