@@ -36,7 +36,7 @@
             margin-top: 25px;
             font-family: system-ui;
             font-weight: bold;
-            background: #00a2c8;
+            background: linear-gradient(135deg, #8e44ad, #3e8abd, #8e44ad, #3e8abd);
             width: 100vw;
             text-align: center;
             border-radius: 15px;
@@ -55,13 +55,14 @@
         }
 
         .navbar {
-            background: #00a2c8;
+            background: linear-gradient(135deg, #8e44ad, #3e8abd, #8e44ad, #3e8abd);
             color: #fff;
             padding: 0.5rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 120px;
+            width: 93.7vw;
             border: solid black 2px;
             border-radius: 12px;
             margin-left: -2px;
@@ -147,7 +148,7 @@
         
 
         footer {
-            background: #00a2c8;
+            background: linear-gradient(135deg, #8e44ad, #3e8abd, #8e44ad, #3e8abd);
             color: white;
             height: 270px;
             display: flex;
@@ -316,6 +317,7 @@
                 border-radius: 0 0 12px 12px;
                 margin-left: 0;
                 margin-right: 0;
+                width: 98.8vw;
             }
 
             .navbar .title {
@@ -354,10 +356,10 @@
             h2 {
                 font-size: 1.1rem;
                 padding: 6px;
-                width: 95vw;
-                margin-bottom: 20px;
+                width: 97%;
+                margin-bottom: 5px;
                 margin-top: 10px;
-                margin-left: -8px;
+                
             }
 
             .institute img {
@@ -375,8 +377,9 @@
                 height: auto;
                 margin-top: 40px;
                 border-radius: 0 0 15px 15px;
-                margin-left: 0;
+                margin-left: -1.8%;
                 padding: 10px 0;
+                margin-bottom: -10%;
             }
 
             .footer-links {
@@ -451,19 +454,23 @@
                 margin-right: 0;
                 height: 100%;
                 border-radius: 0;
+                overflow: hidden;
                 background-color: white;
             }
-
-            .hero-slide {
-                position: relative;
+            .hero-right img{
                 width: 100%;
-                height: auto;
-                opacity: 0;
+                margin-left:0%;
+                transform: translateX(-1%);
                 object-fit: contain;
+                overflow: hidden;
+                margin-right: 0;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+            
             }
-
         
-
            
         }
     </style>
